@@ -1,6 +1,2 @@
 [build]
- functions='functions'
-   publish = ".well-known"
-
-[dev]
-  publish = "dist"
+    functions = "functions
