@@ -79,7 +79,7 @@ Example : [http://mobile.localhost:3000](http://mobile.localhost:3000).
 
 - **OPEN_API_SCHEMA_API_KEY**: 
   An API key to access the Open API schema. This key is required to fetch the schema definitions used for generating TypeScript types or other client libraries. It ensures that only authorized users can access the detailed API specifications.
-                         |                         |
+
 </details>
 
 ## Configure multi-tenant on dev environment
@@ -146,5 +146,6 @@ NEXT_PUBLIC_MEDIA_URL=https://qa-api.nova.bepatient.com
 CYPRESS_BASE_URL=http://qacapture.localhost:3001
 CYPRESS_IP_PORT=localhost:3001
 NOVA_API_KEY="5cWBsiKQaPsU5rHcEFS1EhVO0GGr/y"
+
 
 
