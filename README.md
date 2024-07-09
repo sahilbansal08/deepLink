@@ -35,16 +35,51 @@ Example : [http://mobile.localhost:3000](http://mobile.localhost:3000).
 <details>
 	<summary>Env vars definition</summary>
 
-| Env                      | Definition              |
-|--------------------------|-------------------------|
-|NEXT_PUBLIC_API_URL       |URL for api instance     |
-||                         |
-|                          |                         |
-|                          |                         |
-|                          |                         |
-|                          |                         |
-|                          |                         |
-|                          |                         |
+| Env                             | Definition                                              |
+|---------------------------------|---------------------------------------------------------|
+| NEXT_PUBLIC_API_URL             | URL for API instance                                    |
+| NEXT_PUBLIC_MEDIA_DOMAIN        | Domain for media storage                                |
+| DEPLOYMENT_DOMAIN               | Domain for deployment                                   |
+| NOVA_API_KEY                    | API key for NOVA                                        |
+| SKIP_BUILD_STATIC_GENERATION    | Flag to skip static generation during build             |
+| REVALIDATE_TOKEN                | Token for revalidation                                  |
+| CYPRESS_BASE_URL                | Base URL for Cypress tests                              |
+| CYPRESS_IP_PORT                 | IP and port for Cypress tests                           |
+| ACCESS_CONTROL_ALLOW_ORIGIN     | Allowed origin for access control                       |
+| OPEN_API_SCHEMA_API_KEY         | API key for accessing the Open API schema               |
+
+### Descriptions
+
+- **NEXT_PUBLIC_API_URL**: 
+  The URL for the API instance that the application will communicate with. This is the base URL used for all API requests made by the frontend. It should point to the main entry point of your backend services, typically something like `https://api.example.com`.
+
+- **NEXT_PUBLIC_MEDIA_DOMAIN**: 
+  The domain where media assets (such as images, videos, and other files) are stored. This URL is used to fetch and display media content within the application. For example, if your media is stored on a cloud storage service, this would be the base URL for that service.
+
+- **DEPLOYMENT_DOMAIN**: 
+  The domain used for the deployment of the application. This is the URL where the application will be accessible to end-users. For instance, in a staging environment, it might be `https://staging.example.com`, and in production, it might be `https://example.com`.
+
+- **NOVA_API_KEY**: 
+  An API key used to authenticate with the NOVA API. This key is required to access protected endpoints on the NOVA API and should be kept secure. It is typically provided by the NOVA service and should be included in the headers of API requests.
+
+- **SKIP_BUILD_STATIC_GENERATION**: 
+  A boolean flag indicating whether to skip static generation during the build process. When set to `true`, it can speed up the build process by not generating static pages, which is useful for certain development or CI/CD scenarios.
+
+- **REVALIDATE_TOKEN**: 
+  A token used for revalidating certain processes within the application. This token can be used to trigger revalidation of static content, ensuring that the latest data is displayed without needing a full rebuild.
+
+- **CYPRESS_BASE_URL**: 
+  The base URL for running Cypress end-to-end tests. This URL is where the Cypress tests will be executed, simulating user interactions with the application. It should match the URL where your development or test instance is running.
+
+- **CYPRESS_IP_PORT**: 
+  The IP address and port for Cypress tests. This specifies the network address where Cypress should connect to run its tests. Typically, it would be something like `localhost:3000`.
+
+- **ACCESS_CONTROL_ALLOW_ORIGIN**: 
+  Specifies which origin is allowed for access control. This is used to configure CORS (Cross-Origin Resource Sharing) policies, determining which domains are permitted to make requests to your server. For example, setting it to `https://admin.example.com` allows that domain to access your API.
+
+- **OPEN_API_SCHEMA_API_KEY**: 
+  An API key to access the Open API schema. This key is required to fetch the schema definitions used for generating TypeScript types or other client libraries. It ensures that only authorized users can access the detailed API specifications.
+                         |                         |
 </details>
 
 ## Configure multi-tenant on dev environment
